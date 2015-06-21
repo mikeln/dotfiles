@@ -1,0 +1,9 @@
+#ssh-add ~/.ssh/mln_ssh.pem
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+
+export JAVA_HOME=$(/usr/libexec/java_home)
+#
+# kubernetes stuff
+#
+export KUBERNETES_PROVIDER=vagrant
+export KUBERNETES_HOME='/opt/kubernetes'

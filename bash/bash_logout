@@ -1,0 +1,15 @@
+#
+# determine if this is the last term
+#
+ME=`whoami`
+NUM_TERMS=`who | grep $ME | grep -c "tty" `
+echo "TERMS NOW: $NUM_TERMS"
+if [ $NUM_TERMS -eq 1 ]; then
+        # this isthe last term...reset the sleep var
+        CUR_SLEEP=`pmset -g | grep " sleep " | cut -d " " -f 18`
+        echo "Last terminal -  Current sleep $CUR_SLEEP"
+        if [ $CUR_SLEEP -eq 0 ]; then
+                echo "Turning sleep back on"
+                sudo pmset sleep 25
+        fi
+fi

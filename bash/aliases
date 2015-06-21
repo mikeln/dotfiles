@@ -1,0 +1,34 @@
+#
+# customize for self
+#
+alias la='ls -laF'
+alias ll='ls -laF'
+
+alias xdev='cd ~/dev/xcode'
+alias gdev='cd ~/dev/g'
+alias cdev='cd ~/dev/cloud'
+alias ddev='cd ~/dev/DWStuff'
+alias mrel='cd /Users/mikel_nelson/dev/xcode/apfel/CruiseBookDemo/mtnRelease'
+alias repo='cd /Users/mikel_nelson/dev/xcode/apfel/servers/MTNIosStore/safe-repo'
+
+alias rftp='sftp -i ~/.ssh/mln_ssh.pem ubuntu@ec2-54-225-182-128.compute-1.amazonaws.com'
+
+alias hk='cd /Users/mikel_nelson/dev/hackathon'
+
+alias cleandockercache="docker images -q --filter "dangling=true" | xargs docker rmi"
+
+#
+# try to find kubectl
+#
+#KUBECTL=`find /opt/kubernetes/platforms/darwin/amd64 -type f -name "kubectl" -print | egrep '.*'`
+#if [ $? -ne 0 ];then
+#    echo "Could not find kubectl. Make sure you have /opt/kubernetes/platforms/darwin/amd64/kubectl defined."
+#fi
+#alias kubectl=${KUBECTL}
+alias kubectrl=kubectl
+alias kub=kubectl
+alias setkraken='cd ~/dev/cloud/kraken/kubernetes;source ./setmyenv.sh'
+alias getkraken=setkraken
+
+alias kdev='cd ~/dev/cloud/kubernetes/kubernetes/'
+alias cdev='cd ~/dev/cloud/'

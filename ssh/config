@@ -1,0 +1,12 @@
+#Default GitHub
+Host github.com
+HostName github.com
+User git
+IdentityFile ~/.ssh/mln_ssh.pem
+
+Host 10.22.6.241
+StrictHostKeyChecking no
+Host 10.22.6.242
+StrictHostKeyChecking no
+Host 10.22.6.243
+StrictHostKeyChecking no

@@ -1,0 +1,77 @@
+
+# export PATH="/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:$PATH"
+# export PATH=${PATH}:/opt/local/bin:/Users/mikeln/bin
+export PATH=${PATH}:/Users/mikeln/bin:/Users/mikel_nelson/bin
+
+# export JAVA_HOME="/Library/Java/Home"
+# export CATALINA_HOME="/usr/local/tomcat"
+# export MAVEN_HOME="/usr/local/maven"
+# export FLEX_BIN="/Applications/Adobe Flex Builder 3 Plug-in/sdks/3.0.0/bin"
+#export SBT_OPTS="-Xmx512m -XX:MaxPermSize=128m"
+
+# export PATH=${MAVEN_HOME}/bin:${FLEX_BIN}:${PATH}
+#
+#
+export AWS_CONFIG_FILE=~/.aws/the.conf
+export AWS_ACCESS_KEY_ID=AKIAJJXCVLASAGDB234Q
+export AWS_SECRET_ACCESS_KEY=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
+export AWS_KEYPAIR_NAME=mln-dev
+export AWS_SSH_PRIVKEY=~/.aws/mln-dev.pem
+
+export AWS_USER_SERVER_NAME=mikeln
+export AWS_USERNAME=mikel.nelson
+
+export EDITOR='vi'
+
+# include .bashrc if it exists
+if [ -f ~/.bashrc ]; then
+    . ~/.bashrc
+fi 
+#
+# if a shelll ( also nice if remote )...disable the sleep timer
+#
+if  test -t 0 ; then
+    # interactive shell
+    # if remote...SSH_CONNECTION is present
+    if [ ! -z ${SSH_CONNECTION+x} ];then
+        echo "SSH Login"
+        CUR_SLEEP=`pmset -g | grep " sleep " | cut -d " " -f 18`
+        if [ $CUR_SLEEP -ne 0 ]; then
+                echo "Disabling sleep"
+                sudo pmset sleep 0
+        fi
+    fi
+
+    export TERM="xterm-256color"
+    export CLICOLOR=1
+    #export LS_COLORS=ExFxCxDxBxegedabagacad
+    set -o vi
+    # terminal bar title
+    export PROMPT_COMMAND='echo -ne "\033]0;MacBookPro:$PWD\007"'
+    #
+    # docker
+    $(boot2docker shellinit)
+fi
+#
+# set aliases
+#
+if [ -f ~/.aliases ]; then
+    . ~/.aliases
+fi
+
+##
+# Your previous /Users/mikel_nelson/.bash_login file was backed up as /Users/mikel_nelson/.bash_login.macports-saved_2014-03-17_at_14:32:41
+##
+
+# MacPorts Installer addition on 2014-03-17_at_14:32:41: adding an appropriate PATH variable for use with MacPorts.
+export PATH=/opt/local/bin:/opt/local/sbin:$PATH
+# Finished adapting your PATH environment variable for use with MacPorts.
+
+
+##
+# Your previous /Users/mikel_nelson/.bash_login file was backed up as /Users/mikel_nelson/.bash_login.macports-saved_2014-11-18_at_16:18:01
+##
+
+# MacPorts Installer addition on 2014-11-18_at_16:18:01: adding an appropriate PATH variable for use with MacPorts.
+export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
+# Finished adapting your PATH environment variable for use with MacPorts.
