@@ -58,6 +58,10 @@ fi
 if [ -f ~/.aliases ]; then
     . ~/.aliases
 fi
+#
+# make sure we are port forwarding
+#
+#sudo sysctl -w net.inet.ip.forwarding=1
 
 ##
 # Your previous /Users/mikel_nelson/.bash_login file was backed up as /Users/mikel_nelson/.bash_login.macports-saved_2014-03-17_at_14:32:41
