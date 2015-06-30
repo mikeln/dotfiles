@@ -27,7 +27,7 @@ alias cleandockercache="docker images -q --filter "dangling=true" | xargs docker
 #alias kubectl=${KUBECTL}
 alias kubectrl=kubectl
 alias kub=kubectl
-alias setkraken='cd ~/dev/cloud/kraken/kubernetes;source ./setmyenv.sh'
+alias setkraken='cd ~/bv/cloud/kraken/kubernetes;source ~/bin/setmyenv.sh'
 alias getkraken=setkraken
 
 alias kdev='cd ~/dev/cloud/kubernetes/kubernetes/'
