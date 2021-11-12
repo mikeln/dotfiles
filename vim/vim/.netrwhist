@@ -1,0 +1,7 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =5
+let g:netrw_dirhist_1='/Users/Mikel_Nelson/dev/cloud/IMS2019/ims-api-newschema/api/ims-api-spec'
+let g:netrw_dirhist_2='/Users/Mikel_Nelson/dev/cloud/IMS2019/ims-api-marat/pkg'
+let g:netrw_dirhist_3='/Users/Mikel_Nelson/dev/cloud/IMS2019/ims-api-newschema/internal/database'
+let g:netrw_dirhist_4='/Users/Mikel_Nelson/dev/cloud/IMS2019/ims-api-newschema/internal'
+let g:netrw_dirhist_5='/Users/Mikel_Nelson/dev/cloud/IMS2019/ims-api-newschema/build/scripts'

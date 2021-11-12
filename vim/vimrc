@@ -6,19 +6,22 @@ call pathogen#infect()
 call pathogen#helptags()
 "
 " enable completion on certain files
-autocmd FileType html,htmldjango,jinjahtml,eruby,mako let b:closetag_html_style=1
-autocmd FileType html,xhtml,xml,htmldjango,jinjahtml,eruby,mako source ~/.vim/bundle/closetag/plugin/closetag.vim
-"
-" Other filetypes where we want spaces instead of tabs
-autocmd Filetype tex,bib,text,cov,mail,html,rst set expandtab
-autocmd Filetype rst set shiftwidth=4
-autocmd Filetype markdown set expandtab
-autocmd Filetype markdown set shiftwidth=2
-autocmd Filetype markdown set tw=80
-autocmd Filetype yaml set expandtab
-autocmd Filetype yaml set shiftwidth=2
-autocmd Filetype mako set expandtab
-autocmd Filetype mako set shiftwidth=2
+augroup loadgroup
+   autocmd!
+   autocmd FileType html,htmldjango,jinjahtml,eruby,mako let b:closetag_html_style=1
+   autocmd FileType html,xhtml,xml,htmldjango,jinjahtml,eruby,mako source ~/.vim/bundle/closetag/plugin/closetag.vim
+   "
+   " Other filetypes where we want spaces instead of tabs
+   autocmd Filetype tex,bib,text,cov,mail,html,rst set expandtab
+   autocmd Filetype rst set shiftwidth=4
+   autocmd Filetype markdown set expandtab
+   autocmd Filetype markdown set shiftwidth=2
+   autocmd Filetype markdown set tw=80
+   autocmd Filetype yaml set expandtab
+   autocmd Filetype yaml set shiftwidth=2
+   autocmd Filetype mako set expandtab
+   autocmd Filetype mako set shiftwidth=2
+augroup END
 "
 " solorize color schemeing
 syntax on
@@ -38,7 +41,7 @@ let g:go_auto_type_info = 1
 " let g:go_fmt_autosave = 0
 "
 " NERDTREE
-:noremap <C-g> :NERDTreeToggle<CR>
+":noremap <C-g> :NERDTreeToggle<CR>
 " Status line types/signatures.
 let g:go_auto_type_info = 1
 "
@@ -48,3 +51,6 @@ set backspace=indent,eol,start
 " eol     allow backspacing over line breaks (join lines)
 " start   allow backspacing over the start of insert; CTRL-W and CTRL-U
 "        stop once at the start of insert.
+"
+set nocompatible
+set viminfo='1,/10,:10,h
